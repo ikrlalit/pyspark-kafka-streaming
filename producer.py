@@ -10,7 +10,7 @@ gcs_path = 'gs://wk8ga-bucket-ibd/input_data.csv'
 # Load data from GCS using gcsfs-compatible interface
 df = pd.read_csv(gcs_path)
 
-# Kafka producer setup
+# Read from Kafka, replace ip with your Kafka broker address
 producer = KafkaProducer(
     bootstrap_servers='34.59.88.11:9092',
     value_serializer=lambda v: json.dumps(v).encode('utf-8')
