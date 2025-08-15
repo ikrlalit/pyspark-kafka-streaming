@@ -16,7 +16,7 @@ schema = StructType() \
     .add("value", IntegerType()) \
     .add("timestamp", TimestampType())
 
-# Read from Kafka
+# Read from Kafka, replace ip with your Kafka broker address 
 df = spark.readStream \
     .format("kafka") \
     .option("kafka.bootstrap.servers", "34.59.88.11:9092") \
